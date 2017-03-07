@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7558BD80822F043A4218F8BE /* libPods-WWZFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FF797002A54CB7DABA5845 /* libPods-WWZFoundation.a */; };
 		B094F0CD1E6E63A100D5380E /* WWZFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0CB1E6E63A100D5380E /* WWZFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0E11E6E63C000D5380E /* Foundation+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0D41E6E63C000D5380E /* Foundation+WWZ.h */; };
 		B094F0E21E6E63C000D5380E /* NSAttributedString+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0D51E6E63C000D5380E /* NSAttributedString+WWZ.h */; };
@@ -34,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43CB3B3CC781A247C37D61A3 /* Pods-WWZFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WWZFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WWZFoundation/Pods-WWZFoundation.debug.xcconfig"; sourceTree = "<group>"; };
+		55D04C269241731FD5753131 /* Pods-WWZFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WWZFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-WWZFoundation/Pods-WWZFoundation.release.xcconfig"; sourceTree = "<group>"; };
+		66FF797002A54CB7DABA5845 /* libPods-WWZFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WWZFoundation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B094F0C81E6E63A100D5380E /* WWZFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWZFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B094F0CB1E6E63A100D5380E /* WWZFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWZFoundation.h; sourceTree = "<group>"; };
 		B094F0CC1E6E63A100D5380E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7558BD80822F043A4218F8BE /* libPods-WWZFoundation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +84,8 @@
 				B094F0D31E6E63C000D5380E /* Foundation+WWZ */,
 				B094F0CA1E6E63A100D5380E /* WWZFoundation */,
 				B094F0C91E6E63A100D5380E /* Products */,
+				ECE62CDA4659E80D201543AD /* Pods */,
+				CBCBE2A70ED3F6DD533A77B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +136,23 @@
 			path = "Foundation+WWZ";
 			sourceTree = "<group>";
 		};
+		CBCBE2A70ED3F6DD533A77B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66FF797002A54CB7DABA5845 /* libPods-WWZFoundation.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECE62CDA4659E80D201543AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43CB3B3CC781A247C37D61A3 /* Pods-WWZFoundation.debug.xcconfig */,
+				55D04C269241731FD5753131 /* Pods-WWZFoundation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -159,10 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B094F0D01E6E63A100D5380E /* Build configuration list for PBXNativeTarget "WWZFoundation" */;
 			buildPhases = (
+				DE402CC3BA9F03494D74D7C4 /* [CP] Check Pods Manifest.lock */,
 				B094F0C31E6E63A100D5380E /* Sources */,
 				B094F0C41E6E63A100D5380E /* Frameworks */,
 				B094F0C51E6E63A100D5380E /* Headers */,
 				B094F0C61E6E63A100D5380E /* Resources */,
+				C609824C8B8580348E1661F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,6 +241,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C609824C8B8580348E1661F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WWZFoundation/Pods-WWZFoundation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE402CC3BA9F03494D74D7C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B094F0C31E6E63A100D5380E /* Sources */ = {
@@ -336,6 +395,7 @@
 		};
 		B094F0D11E6E63A100D5380E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43CB3B3CC781A247C37D61A3 /* Pods-WWZFoundation.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -354,6 +414,7 @@
 		};
 		B094F0D21E6E63A100D5380E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D04C269241731FD5753131 /* Pods-WWZFoundation.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
