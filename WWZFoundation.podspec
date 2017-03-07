@@ -33,4 +33,11 @@ Pod::Spec.new do |s|
 
   s.framework  = "UIKit"
 
+
+  s.subspec 'Category' do |ss|
+    ss.source_files = "WWZFoundation/Category/*.{h,m}"
+  end
+  s.subspec 'Model' do |ss|
+    ss.source_files = "WWZFoundation/Model/*.{h,m}"
+    ss.dependency = "WWZFoundation/Category"
 end
