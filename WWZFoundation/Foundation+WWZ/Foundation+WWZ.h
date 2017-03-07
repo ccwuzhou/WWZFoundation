@@ -16,7 +16,4 @@
 #import "NSAttributedString+WWZ.h"
 #import "NSTimer+WWZ.h"
 
-#import "WWZCaptureTool.h"
-#import "WWZLanguageTool.h"
-#import "WWZSystem.h"
 #endif /* WWZFoundation_h */
