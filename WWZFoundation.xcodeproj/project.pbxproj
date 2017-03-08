@@ -9,28 +9,28 @@
 /* Begin PBXBuildFile section */
 		7558BD80822F043A4218F8BE /* libPods-WWZFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FF797002A54CB7DABA5845 /* libPods-WWZFoundation.a */; };
 		B094F0CD1E6E63A100D5380E /* WWZFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0CB1E6E63A100D5380E /* WWZFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B094F0E11E6E63C000D5380E /* Foundation+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0D41E6E63C000D5380E /* Foundation+WWZ.h */; };
-		B094F0E21E6E63C000D5380E /* NSAttributedString+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0D51E6E63C000D5380E /* NSAttributedString+WWZ.h */; };
+		B094F0E11E6E63C000D5380E /* Foundation+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0D41E6E63C000D5380E /* Foundation+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B094F0E21E6E63C000D5380E /* NSAttributedString+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0D51E6E63C000D5380E /* NSAttributedString+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0E31E6E63C000D5380E /* NSAttributedString+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0D61E6E63C000D5380E /* NSAttributedString+WWZ.m */; };
-		B094F0E41E6E63C000D5380E /* NSData+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0D71E6E63C000D5380E /* NSData+WWZ.h */; };
+		B094F0E41E6E63C000D5380E /* NSData+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0D71E6E63C000D5380E /* NSData+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0E51E6E63C000D5380E /* NSData+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0D81E6E63C000D5380E /* NSData+WWZ.m */; };
-		B094F0E61E6E63C000D5380E /* NSDate+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0D91E6E63C000D5380E /* NSDate+WWZ.h */; };
+		B094F0E61E6E63C000D5380E /* NSDate+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0D91E6E63C000D5380E /* NSDate+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0E71E6E63C000D5380E /* NSDate+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0DA1E6E63C000D5380E /* NSDate+WWZ.m */; };
-		B094F0E81E6E63C000D5380E /* NSObject+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0DB1E6E63C000D5380E /* NSObject+WWZ.h */; };
+		B094F0E81E6E63C000D5380E /* NSObject+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0DB1E6E63C000D5380E /* NSObject+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0E91E6E63C000D5380E /* NSObject+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0DC1E6E63C000D5380E /* NSObject+WWZ.m */; };
-		B094F0EA1E6E63C000D5380E /* NSString+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0DD1E6E63C000D5380E /* NSString+WWZ.h */; };
+		B094F0EA1E6E63C000D5380E /* NSString+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0DD1E6E63C000D5380E /* NSString+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0EB1E6E63C000D5380E /* NSString+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0DE1E6E63C000D5380E /* NSString+WWZ.m */; };
-		B094F0EC1E6E63C000D5380E /* NSTimer+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0DF1E6E63C000D5380E /* NSTimer+WWZ.h */; };
+		B094F0EC1E6E63C000D5380E /* NSTimer+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0DF1E6E63C000D5380E /* NSTimer+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0ED1E6E63C000D5380E /* NSTimer+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0E01E6E63C000D5380E /* NSTimer+WWZ.m */; };
-		B094F0F81E6E63C600D5380E /* WWZCaptureTool.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0EE1E6E63C600D5380E /* WWZCaptureTool.h */; };
+		B094F0F81E6E63C600D5380E /* WWZCaptureTool.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0EE1E6E63C600D5380E /* WWZCaptureTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0F91E6E63C600D5380E /* WWZCaptureTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0EF1E6E63C600D5380E /* WWZCaptureTool.m */; };
-		B094F0FA1E6E63C600D5380E /* WWZKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0F01E6E63C600D5380E /* WWZKeychain.h */; };
+		B094F0FA1E6E63C600D5380E /* WWZKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0F01E6E63C600D5380E /* WWZKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0FB1E6E63C600D5380E /* WWZKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0F11E6E63C600D5380E /* WWZKeychain.m */; };
-		B094F0FC1E6E63C600D5380E /* WWZKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0F21E6E63C600D5380E /* WWZKeychainQuery.h */; };
+		B094F0FC1E6E63C600D5380E /* WWZKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0F21E6E63C600D5380E /* WWZKeychainQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0FD1E6E63C600D5380E /* WWZKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0F31E6E63C600D5380E /* WWZKeychainQuery.m */; };
-		B094F0FE1E6E63C600D5380E /* WWZLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0F41E6E63C600D5380E /* WWZLanguageTool.h */; };
+		B094F0FE1E6E63C600D5380E /* WWZLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0F41E6E63C600D5380E /* WWZLanguageTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F0FF1E6E63C600D5380E /* WWZLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0F51E6E63C600D5380E /* WWZLanguageTool.m */; };
-		B094F1001E6E63C600D5380E /* WWZSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0F61E6E63C600D5380E /* WWZSystem.h */; };
+		B094F1001E6E63C600D5380E /* WWZSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F0F61E6E63C600D5380E /* WWZSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1011E6E63C600D5380E /* WWZSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F0F71E6E63C600D5380E /* WWZSystem.m */; };
 /* End PBXBuildFile section */
 
@@ -405,7 +405,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WWZFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.tijio.WWZFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -424,7 +426,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WWZFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.tijio.WWZFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -450,6 +454,7 @@
 				B094F0D21E6E63A100D5380E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
