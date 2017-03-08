@@ -17,3 +17,7 @@ FOUNDATION_EXPORT const unsigned char WWZFoundationVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <WWZFoundation/PublicHeader.h>
 
 
+#import "WWZSystem.h"
+#import "WWZLanguageTool.h"
+#import "WWZCaptureTool.h"
+#import "Foundation+WWZ.h"
