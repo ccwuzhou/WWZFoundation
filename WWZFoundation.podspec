@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "WWZFoundation"
-  s.version      = "1.1.1"
+  s.version      = "1.2.0"
   s.summary      = "A short description of WWZFoundation."
 
   s.homepage     = "https://github.com/ccwuzhou/WWZFoundation"
