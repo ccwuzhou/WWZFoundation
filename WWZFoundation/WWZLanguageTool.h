@@ -8,19 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-#define EN_VALUE @"en" // 英文
-#define zh_Hans_VALUE @"zh-Hans"  // 简体中文
-#define zh_Hant_VALUE @"zh-Hant"  // 繁体中文
+typedef NS_ENUM(NSUInteger, WWZLanguage) {
+    WWZLanguageEnglish,
+    WWZLanguageSimpleChinese,
+    WWZLanguageHantChinese,
+    WWZLanguageOther
+};
 
 @interface WWZLanguageTool : NSObject
 
-
-+ (instancetype)sharedLanguageTool;
-
-
+/**
+ *  当前语言
+ */
 @property (nonatomic, copy, readonly) NSString *currentLanguageValue;
 
-- (BOOL)isChineseSimplified;
+/**
+ *  当前语言类型
+ */
+@property (nonatomic, assign) WWZLanguage language;
+
++ (instancetype)sharedLanguageTool;
 
 /**
  *  返回Localizable中指定的key的值

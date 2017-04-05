@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "WWZFoundation"
-  s.version      = "1.2.0"
+  s.version      = "1.2.2"
   s.summary      = "A short description of WWZFoundation."
 
   s.homepage     = "https://github.com/ccwuzhou/WWZFoundation"
@@ -33,10 +33,12 @@ Pod::Spec.new do |s|
 
   s.framework  = "UIKit"
 
-  s.subspec 'WWZFoundation' do |ss|
-    ss.source_files = "WWZFoundation/*.{h,m}"
-  end
   s.subspec 'Foundation+WWZ' do |ss|
     ss.source_files = "Foundation+WWZ/*.{h,m}"
   end
+  s.subspec 'WWZFoundation' do |ss|
+    ss.source_files = "WWZFoundation/*.{h,m}"
+    ss.dependency "WWZFoundation/Foundation+WWZ"
+  end
+ 
 end
