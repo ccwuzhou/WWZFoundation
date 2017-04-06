@@ -118,7 +118,7 @@
 {
     return [NSString stringWithFormat:@"%@,%@,%@",[self wwz_deviceModel],[self wwz_systemVersion],[self wwz_UUID]];
 }
-
+/*
 static const char * __jb_app = NULL;
 + (BOOL)wwz_isJailBroken
 {
@@ -148,7 +148,7 @@ static const char * __jb_app = NULL;
     {
         return YES;
     }
-    
+
     if ( 0 == system("ls") )
     {
         return YES;
@@ -157,7 +157,7 @@ static const char * __jb_app = NULL;
     return YES;
     
 }
-
+*/
 + (BOOL)wwz_isPhone
 {
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;

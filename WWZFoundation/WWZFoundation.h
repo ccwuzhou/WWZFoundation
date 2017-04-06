@@ -20,4 +20,6 @@ FOUNDATION_EXPORT const unsigned char WWZFoundationVersionString[];
 #import "WWZSystem.h"
 #import "WWZLanguageTool.h"
 #import "WWZCaptureTool.h"
+#import "WWZKeychain.h"
+
 #import "Foundation+WWZ.h"

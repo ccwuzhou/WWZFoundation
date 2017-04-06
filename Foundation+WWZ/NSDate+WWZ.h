@@ -56,7 +56,7 @@
  *  将时间字符串转为NSDate
  *
  *  @param dateString 时间字符串 @"yyyy-MM-dd HH:mm", @"yyyy/MM/dd HH:mm:ss"
- *  @param format     字符串时间格式
+ *  @param dateFormat     字符串时间格式
  *
  *  @return date
  */
@@ -66,7 +66,7 @@
  *  NSDate 转 NSString
  *
  *  @param date date
- *  @param format   时间格式
+ *  @param dateFormat   时间格式
  *
  *  @return NSString
  */

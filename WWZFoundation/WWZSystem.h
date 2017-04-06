@@ -42,10 +42,10 @@
 
 + (NSString *)wwz_systemInfo;
 
-/**
- *  是否越狱
- */
-+ (BOOL)wwz_isJailBroken;
+///**
+// *  是否越狱
+// */
+//+ (BOOL)wwz_isJailBroken;
 
 + (BOOL)wwz_isPhone;
 

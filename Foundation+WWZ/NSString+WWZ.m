@@ -326,11 +326,11 @@ NSString *UTF8StringByReplaceUnicodeString(NSString *unicodeString){
         
         if (![key isKindOfClass:[NSString class]]) {
             
-            isStop = stop = YES;
+            isStop = *stop = YES;
         }
         if (![obj isKindOfClass:[NSDictionary class]]&&![obj isKindOfClass:[NSArray class]] && ![obj isKindOfClass:[NSString class]]) {
             
-            isStop = stop = YES;
+            isStop = *stop = YES;
         }
     }];
     
@@ -867,8 +867,8 @@ NSString *UTF8StringByReplaceUnicodeString(NSString *unicodeString){
 /**
  *  返回转换后的值,只能转换2,8,16进制(没测试过)
  *
- *  @param str 需要转换的值
- *  @param sys 需要转换的进制
+ *  @param fromString 需要转换的值
+ *  @param sysNumber 需要转换的进制
  *
  *  @return 转换后的值
  */
@@ -1099,10 +1099,7 @@ NSString *UTF8StringByReplaceUnicodeString(NSString *unicodeString){
     NSString *tempStr2 = [tempStr1 stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
     NSString *tempStr3 = [[@"\"" stringByAppendingString:tempStr2] stringByAppendingString:@"\""];
     NSData *tempData = [tempStr3 dataUsingEncoding:NSUTF8StringEncoding];
-    NSString* returnStr = [NSPropertyListSerialization propertyListFromData:tempData
-                                                           mutabilityOption:NSPropertyListImmutable
-                                                                     format:NULL
-                                                           errorDescription:NULL];
+    NSString *returnStr = [NSPropertyListSerialization propertyListWithData:tempData options:NSPropertyListImmutable format:NULL error:NULL];
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n"withString:@"\n"];
 }
 
@@ -1330,8 +1327,6 @@ int enc_unicode_to_utf8_one(unsigned long unic, unsigned char *pOutput,
 
 /**
  *  判断手机号码格式是否正确，利用正则表达式验证
- *
- *  @return
  */
 + (BOOL)isMobileNumber:(NSString *)mobileNum
 {

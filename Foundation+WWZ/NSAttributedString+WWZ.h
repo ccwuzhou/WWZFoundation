@@ -26,8 +26,8 @@
  *  单纯改变一句话中的某些字的颜色
  *
  *  @param color    需要改变成的颜色
- *  @param totalStr 总的字符串
- *  @param subArray 需要改变颜色的文字数组
+ *  @param totalString 总的字符串
+ *  @param subStringArray 需要改变颜色的文字数组
  *
  *  @return 生成的富文本
  */
@@ -37,7 +37,7 @@
  *  单纯改变句子的字间距（需要 <CoreText/CoreText.h>）
  *
  *  @param totalString 需要更改的字符串
- *  @param space       字间距
+ *  @param textSpace       字间距
  *
  *  @return 生成的富文本
  */
