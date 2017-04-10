@@ -18,27 +18,38 @@
 
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 
+@property (nonatomic, copy) void(^resultBlock)(NSArray *);
+
 @end
 
 @implementation WWZCaptureTool
 
 /**
- *  显示视频预览层
- *
- *  @param layer super layer
- */
-- (void)showPreviewLayerInLayer:(CALayer *)layer{
-    
-    self.previewLayer.frame = layer.bounds;
-    
-    [layer insertSublayer:self.previewLayer atIndex:0];
-}
-
-/**
  *  开始扫描
  */
-- (void)startRunning{
+- (void)startRunning:(UIView *)inView result:(void (^)(NSArray *))result{
     
+    if ([self isCaptureDenyAuthorizationed]) {
+        return;
+    }
+    
+    self.resultBlock = result;
+    
+    //将设备输入输出添加到会话中
+    if ([_captureSession canAddInput:self.captureInput] && [_captureSession canAddOutput:self.captureOutput]){
+        
+        [self.captureSession addInput:self.captureInput];
+        [self.captureSession addOutput:self.captureOutput];
+    }
+
+    // 条码类型 AVMetadataObjectTypeQRCode
+    self.captureOutput.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
+    
+    // 添加视频预览图层
+    self.previewLayer.frame = inView.bounds;
+    [inView.layer insertSublayer:self.previewLayer atIndex:0];
+    
+    // 启动会话, 监听元数据处理后的结果
     [self.captureSession startRunning];
 }
 /**
@@ -46,25 +57,37 @@
  */
 - (void)stopRunning{
     
+    if ([self isCaptureDenyAuthorizationed]) {
+        return;
+    }
     [self.captureSession stopRunning];
+}
+/**
+ *  设置兴趣点
+ */
+- (void)setOriginRectOfInterest:(CGRect)originRect{
+
+    CGRect screenBounds = [UIScreen mainScreen].bounds;
+    CGFloat x = originRect.origin.y / screenBounds.size.height;
+    CGFloat y = originRect.origin.x / screenBounds.size.width;
+    CGFloat width = originRect.size.height / screenBounds.size.height;
+    CGFloat height = originRect.size.width / screenBounds.size.width;
+    
+    self.captureOutput.rectOfInterest = CGRectMake(x, y, width, height);
 }
 /**
  *  手电简
  */
 - (void)setIsTorchModeOn:(BOOL)isTorchModeOn{
-    _isTorchModeOn = isTorchModeOn;
-    if (_isTorchModeOn) {
-        [self setTorchMode:AVCaptureTorchModeOn];
-    }else{
-        [self setTorchMode:AVCaptureTorchModeOff];
+    
+    if ([self isCaptureDenyAuthorizationed]) {
+        return;
     }
-}
-/**
- *  设置手电简开关
- */
-- (void)setTorchMode:(AVCaptureTorchMode )torchMode{
+    
+    AVCaptureTorchMode torchMode = isTorchModeOn ? AVCaptureTorchModeOn : AVCaptureTorchModeOff;
     
     AVCaptureDevice *captureDevice= [_captureInput device];
+    
     NSError *error;
     //注意改变设备属性前一定要首先调用lockForConfiguration:调用完之后使用unlockForConfiguration方法解锁
     if ([captureDevice lockForConfiguration:&error]) {
@@ -83,22 +106,19 @@
  *  扫描成功调用
  */
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
-    
-    if ([metadataObjects count] == 0) return;
-    
-    [_captureSession stopRunning];
-    
-    AVMetadataMachineReadableCodeObject *metadataObject = [metadataObjects objectAtIndex:0];
-    
-    // 二维码字符串
-    NSString *stringValue = metadataObject.stringValue;
-    
-    if (!stringValue) return;
 
-    if ([self.delegate respondsToSelector:@selector(captureTool:captureStringValue:)]) {
-        [self.delegate captureTool:self captureStringValue:stringValue];
+    NSMutableArray *mArr = [NSMutableArray array];
+    
+    for (AVMetadataObject *metadataObject in metadataObjects) {
+        AVMetadataMachineReadableCodeObject *codeObj = (AVMetadataMachineReadableCodeObject *)[self.previewLayer transformedMetadataObjectForMetadataObject:metadataObject];
+        // 二维码字符串
+        NSString *stringValue = codeObj.stringValue;
+        if (!stringValue) continue;
+        
+        [mArr addObject:stringValue];
     }
     
+    self.resultBlock(mArr);
 }
 #pragma mark - 摄像头相关设置
 /**
@@ -111,18 +131,7 @@
         _captureSession = [[AVCaptureSession alloc] init];
         
         [_captureSession setSessionPreset:AVCaptureSessionPresetHigh];
-        //将设备输入添加到会话中
-        if ([_captureSession canAddInput:self.captureInput]){
-            
-            [_captureSession addInput:self.captureInput];
-        }
-        //将设备输出添加到会话中
-        if ([_captureSession canAddOutput:self.captureOutput]){
-            
-            [_captureSession addOutput:self.captureOutput];
-        }
-        // 条码类型 AVMetadataObjectTypeQRCode
-        _captureOutput.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
+        
     }
     return _captureSession;
 }
@@ -177,7 +186,7 @@
     if (!_captureOutput) {
         
         _captureOutput = [[AVCaptureMetadataOutput alloc] init];
-        //    _captureDeviceoutput.rectOfInterest = CGRectMake(previewX, previewY, previewWH, previewWH);
+
         [_captureOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
         
     }
@@ -196,4 +205,8 @@
     return _previewLayer;
 }
 
+- (BOOL)isCaptureDenyAuthorizationed{
+
+    return [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo] == AVAuthorizationStatusDenied;
+}
 @end
