@@ -36,7 +36,7 @@
     self.resultBlock = result;
     
     //将设备输入输出添加到会话中
-    if ([_captureSession canAddInput:self.captureInput] && [_captureSession canAddOutput:self.captureOutput]){
+    if ([self.captureSession canAddInput:self.captureInput] && [self.captureSession canAddOutput:self.captureOutput]){
         
         [self.captureSession addInput:self.captureInput];
         [self.captureSession addOutput:self.captureOutput];

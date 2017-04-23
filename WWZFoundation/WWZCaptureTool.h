@@ -12,6 +12,11 @@
 @interface WWZCaptureTool : NSObject
 
 /**
+ *  是否拒绝授权
+ */
+@property (nonatomic, assign, readonly) BOOL isCaptureDenyAuthorizationed;
+
+/**
  *  开始扫描
  */
 - (void)startRunning:(UIView *)inView result:(void (^)(NSArray *))result;
@@ -28,4 +33,5 @@
  *  手电简
  */
 - (void)setIsTorchModeOn:(BOOL)isTorchModeOn;
+
 @end
